@@ -1,0 +1,320 @@
+/*Global Styles*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* Default (Desktop): Side-by-side */
+    flex-direction: row; 
+    gap: 40px; 
+}
+
+/* Desktop Logo Style */
+#login-logo {
+    display: block;
+    width: 400px; 
+    height: auto;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ... Login styles ... */
+.login-container h1 { margin-top: 0; margin-bottom: 1rem; color: #333; }
+.login-container p { margin-bottom: 1.5rem; color: #555; }
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600; }
+.form-group input { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+button { width: 100%; padding: 0.75rem; background-color: #007bff; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; }
+button:hover { background-color: #0056b3; }
+#login-error { color: #d93025; margin-top: 1rem; font-weight: 500; }
+
+/* 
+   DASHBOARD STYLES
+
+*/
+.dashboard-body {
+    display: block;
+    justify-content: unset;
+    align-items: unset;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-title-group { display: flex; align-items: center; }
+.header-logo { width: 40px; height: 40px; margin-right: 0.75rem; }
+.header h1 { margin: 0; font-size: 1.5rem; color: #333; }
+
+.profile-menu { position: relative; display: inline-block; }
+.profile-icon { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd; }
+.dropdown-content { display: none; position: absolute; right: 0; top: 50px; background-color: #ffffff; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: 8px; z-index: 1; overflow: hidden; }
+.dropdown-email { padding: 12px 16px; font-size: 0.9rem; color: #555; border-bottom: 1px solid #f0f0f0; }
+.dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; cursor: pointer; }
+.dropdown-content a:hover { background-color: #f1f1f1; }
+#logout-button { color: #d93025; font-weight: 500; }
+.show { display: block; }
+
+.dashboard-main { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; box-sizing: border-box; }
+.search-container { margin-bottom: 2rem; }
+#search-bar { width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+.grades-container { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); overflow: hidden; }
+.grades-container h2 { padding: 1.5rem 1.5rem 0; margin: 0; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+th, td { padding: 1rem 1.5rem; border-bottom: 1px solid #f0f0f0; text-align: left; vertical-align: middle; }
+th { background-color: #f9f9f9; font-weight: 600; color: #555; font-size: 0.85rem; text-transform: uppercase; }
+td .marks-input { width: 70px; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+button.save-btn { background-color: #28a745; color: white; border: none; padding: 0.5rem 0.75rem; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background-color 0.2s; }
+button.save-btn:hover { background-color: #218838; }
+
+/* Filter Bar Styling */
+.filter-controls {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    align-items: flex-end; /* Align inputs to bottom */
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.filter-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.search-container-mini {
+    flex-grow: 1; /* Pushes search bar to take remaining space */
+}
+
+.search-container-mini input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Color-Coded Course Boxes */
+.course-section {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden; /* Keeps header corners rounded */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2rem; /* Space between courses */
+    border: 1px solid #eee;
+    transition: transform 0.2s ease;
+}
+
+.course-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-header h3 {
+    margin: 0;
+    color: #222;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-count {
+    background: rgba(255,255,255,0.5);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Mobile Responsive for Filters */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    .filter-group select, .search-container-mini input {
+        width: 100%;
+    }
+}
+
+/* 
+   STUDENT RESULT VIEW STYLES 
+
+*/
+.student-view-body { display: block; background-color: #fdfbf7; padding: 0; }
+.public-header { justify-content: center; border-bottom: none; background-color: transparent; box-shadow: none; padding-top: 2rem; }
+.student-main { max-width: 900px; margin: 2rem auto; padding: 0 20px; min-height: 80vh; }
+
+/* Search Section */
+.search-section { text-align: center; margin-bottom: 3rem; font-family: "Segoe UI", "Roboto", sans-serif; }
+.search-section h2 { color: #444; font-weight: 600; margin-bottom: 1.5rem; }
+.search-box-wrapper { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; }
+#student-search-input { width: 320px; padding: 12px 16px; font-size: 1.05rem; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: all 0.2s ease; }
+#student-search-input:focus { outline: none; border-color: #007bff; box-shadow: 0 4px 12px rgba(0,123,255,0.15); }
+#student-search-btn { width: auto; padding: 12px 30px; background-color: #333; color: white; border-radius: 8px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+#student-search-btn:hover { background-color: #000; transform: translateY(-1px); }
+.error-msg { color: #d93025; font-weight: 500; margin-top: 1.5rem; min-height: 1.5rem; }
+
+/* Result Container */
+.result-container { background-color: white; padding: 50px; border: 1px solid #dcdcdc; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 50px; position: relative; }
+.serif-font { font-family: "Georgia", "Times New Roman", serif; color: #222; }
+.student-info-block { margin-bottom: 2rem; border-bottom: 2px solid #333; padding-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 2rem; }
+.info-row { font-size: 1.15rem; }
+.info-label { font-weight: bold; color: #555; margin-right: 10px; }
+.info-value { font-weight: bold; color: #000; }
+
+/* Official Tables */
+.official-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.official-table th, .official-table td { border: 1px solid #333; padding: 14px; text-align: center; font-size: 1.1rem; }
+.official-table th { background-color: #f4f4f4; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border-bottom: 2px solid #000; }
+.summary-table { margin-top: 3rem; width: 60%; margin-left: auto; margin-right: auto; }
+.print-action { text-align: center; margin-top: 3rem; }
+.print-btn { background-color: white; color: #333; border: 1px solid #ccc; padding: 10px 24px; border-radius: 4px; font-family: "Segoe UI", sans-serif; font-size: 0.9rem; transition: background-color 0.2s; }
+.print-btn:hover { background-color: #f9f9f9; border-color: #bbb; }
+
+
+/*
+   RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION)
+
+*/
+
+@media (max-width: 768px) {
+
+    /* --- LOGIN PAGE --- */
+    body {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px; /* Reduce global padding on mobile */
+    }
+    #login-logo {
+        width: 150px; 
+        margin-bottom: 10px;
+    }
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    /* --- DASHBOARD PAGE --- */
+    .header {
+        flex-direction: column; /* Stack logo+title and profile */
+        gap: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+    .header h1 {
+        font-size: 1.2rem; /* Smaller title */
+    }
+    .profile-menu {
+        position: absolute; /* Position profile icon absolute to top right */
+        top: 10px;
+        right: 15px;
+    }
+    /* IMPORTANT: Prevent table overflow */
+    .grades-container {
+        overflow-x: auto; /* Allows table to scroll horizontally */
+    }
+    .dashboard-main {
+        padding: 0 15px; /* Less padding on sides */
+    }
+    /* Adjust table text size for mobile */
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    td .marks-input {
+        width: 50px; /* Smaller input box */
+    }
+
+    /* --- STUDENT RESULT PAGE (Index) --- */
+    .student-main {
+        padding: 0 15px;
+        margin-top: 1rem;
+    }
+    
+    /* Stack the search input and button */
+    .search-box-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    #student-search-input {
+        width: 100%; /* Full width input */
+        max-width: 300px;
+    }
+    #student-search-btn {
+        width: 100%; /* Full width button */
+        max-width: 300px;
+    }
+
+    /* Make the result card responsive */
+    .result-container {
+        padding: 20px; /* Less padding inside card */
+        overflow-x: auto; /* Allow tables inside to scroll */
+    }
+    
+    /* Stack student info (Name, Roll, Course) */
+    .student-info-block {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .info-label {
+        width: auto; /* Label doesn't need fixed width anymore */
+        margin-right: 5px;
+    }
+
+    /* Summary table adjustment */
+    .summary-table {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+@media print { 
+    .public-header, .search-section, .print-action { display: none; } 
+    .result-container { border: none; box-shadow: none; padding: 0; margin: 0; overflow: visible; } 
+    .student-view-body { background-color: white; } 
+}

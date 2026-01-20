@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard - eduStat-MAS</title>
+    <link rel="icon" href="./assets/profile-symbol.png" type="image/png">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="header">
+        <div class="logo-title-group">
+            <img src="./assets/symbol-with-motto.png" alt="Logo" class="header-logo">
+            <h1>eduStat-MAS</h1>
+        </div>
+        <div class="profile-menu">
+            <img src="./assets/profile-symbol.png" alt="Profile" class="profile-icon">
+            <div class="dropdown-content">
+                <div id="user-email-display" class="dropdown-email">Loading email...</div>
+                <a id="logout-button">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        
+        <!--  Filter Control Bar -->
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="dept-filter">Select Department:</label>
+                <select id="dept-filter">
+                    <option value="all">All Departments</option>
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="subject-filter">Select Subject:</label>
+                <select id="subject-filter" disabled>
+                    <option value="all">All Subjects</option>
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+
+
+            <div class="search-container-mini">
+                <input type="text" id="search-bar" placeholder="Search Name or Roll No...">
+            </div>
+        </div>
+
+        <!-- 
+            Color-Coded Course Boxes & Student Tables inserted here by JS.
+            See dashboard.js for implementation.
+        -->
+        <div id="courses-container">
+            <!-- Loading State -->
+            <div style="text-align:center; padding: 2rem; color: #666;">Loading student data...</div>
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./scripts/firebase-config.js?v=3"></script>
+    <script src="./scripts/dashboard.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Login - eduStat-MAS</title>
+    <link rel="icon" href="./assets/profile-symbol.png" type="image/png">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    
+    <img src="./assets/symbol-with-motto.png" alt="eduStat-MAS Logo" id="login-logo">  
+    <main class="login-container">
+    <h1> Faculty Login</h1>
+    <p>Please enter your credentials to manage student grades.</p>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="login-email" required><br><br>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="login-password" required><br><br>
+    </div>
+    <button id="login-button">Login</button>
+
+        <p id="login-error" style="color: red;"></p>
+    </main> 
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="./scripts/firebase-config.js"></script>
+
+    <script src="./scripts/auth.js"></script>
+</body>
+</html>

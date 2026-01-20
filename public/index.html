@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results - eduStat-MAS</title>
+    <link rel="icon" href="./assets/profile-symbol.png" type="image/png">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body class="student-view-body">
+
+    <!-- Public Header -->
+    <header class="header public-header">
+        <div class="logo-title-group">
+            <img src="./assets/symbol-with-motto.png" alt="Logo" class="header-logo">
+            <h1>eduStat-MAS</h1>
+        </div>
+    </header>
+
+    <main class="student-main">
+        
+        <!-- 1. Search Section -->
+        <div class="search-section">
+            <h2>Check Your Results</h2>
+            <div class="search-box-wrapper">
+                <input type="text" id="student-search-input" placeholder="Enter Roll Number (e.g., 101)">
+                <button id="student-search-btn">Get Result</button>
+            </div>
+            <p id="search-error-msg" class="error-msg"></p>
+        </div>
+
+        <!-- 2. Result Section (Hidden by default) -->
+        <div id="result-container" class="result-container serif-font" style="display: none;">
+            
+            <!-- Student Details -->
+            <div class="student-info-block">
+                <div class="info-row">
+                    <span class="info-label">Name:</span>
+                    <span id="display-name" class="info-value">--</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Course:</span>
+                    <span id="display-course" class="info-value">--</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Roll Number:</span>
+                    <span id="display-roll" class="info-value">--</span>
+                </div>
+            </div>
+
+            <!-- Main Marks Table -->
+            <table class="official-table">
+                <thead>
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Max Marks</th>
+                        <th>Marks Acquired</th>
+                        <th>Grade Points</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="result-table-body">
+                    <!-- JS will fill this -->
+                </tbody>
+            </table>
+
+            <!-- Summary Table (GPA & Class) -->
+            <table class="official-table summary-table">
+                <thead>
+                    <tr>
+                        <th>Roll Number</th>
+                        <th>GPA</th>
+                        <th>Result Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="summary-roll">--</td>
+                        <td id="summary-gpa">--</td>
+                        <td id="summary-class" style="font-weight: bold;">--</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="print-action">
+                <button onclick="window.print()" class="print-btn">Print Result</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./scripts/firebase-config.js"></script>
+    
+    <!-- Search Logic Script -->
+    <script src="./scripts/student-view.js"></script>
+</body>
+</html>
