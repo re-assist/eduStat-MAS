@@ -59,5 +59,5 @@ To run this project locally:
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/YourUsername/eduStat-MAS.git
+git clone https://github.com/re-assist/eduStat-MAS.git
 cd eduStat-MAS
